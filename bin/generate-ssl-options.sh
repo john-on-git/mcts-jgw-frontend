@@ -31,11 +31,20 @@ then
       -x509 \
       -newkey rsa:4096 \
       -keyout "$localhost_ssl_folder"/localhost.key \
-      -out "$localhost_ssl_folder"/localhost.crt \
       -sha256 \
       -days 3650 \
-      -subj "/C=GB/ST=A/L=B/O=C/OU=D/CN=E" \
+      -subj "//C=GB//ST=A//L=B//O=C//OU=D//CN=E" \
       -addext "subjectAltName = DNS:host.docker.internal,DNS:localhost,IP:127.0.0.1" \
       -addext "extendedKeyUsage = serverAuth"
+
+    openssl req \
+      -new \
+      -x509 \
+      -key "$localhost_ssl_folder"/localhost.key \
+      -out "$localhost_ssl_folder"/localhost.crt \
+      -subj "//C=GB//ST=A//L=B//O=C//OU=D//CN=E" \
+      -passout "pass:password"
+
+    read
   fi
 fi

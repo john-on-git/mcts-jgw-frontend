@@ -49,7 +49,6 @@ module.exports = {
     'jest/prefer-to-have-length': 'error',
     'jest/valid-expect': 'off',
     'linebreak-style': ['error', 'unix'],
-    'no-console': 'warn',
     'no-prototype-builtins': 'off',
     'no-return-await': 'error',
     'no-unneeded-ternary': [

@@ -97,6 +97,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["serve-favicon", "npm:2.5.0"],\
             ["sinon", "npm:18.0.0"],\
             ["sinon-chai", "virtual:3a02cceef93055271d0890b855d0c93a770c9c876ee9b808cf9e23d8d1b8581b5b6efcfb80a9768d650dfa22f93777eca81ae9ef4de2301b22a7619649eb692a#npm:3.7.0"],\
+            ["src", "link:./src::locator=hmcts-dev-test-frontend%40workspace%3A."],\
             ["style-loader", "virtual:3a02cceef93055271d0890b855d0c93a770c9c876ee9b808cf9e23d8d1b8581b5b6efcfb80a9768d650dfa22f93777eca81ae9ef4de2301b22a7619649eb692a#npm:4.0.0"],\
             ["stylelint", "npm:16.6.1"],\
             ["stylelint-config-standard", "virtual:3a02cceef93055271d0890b855d0c93a770c9c876ee9b808cf9e23d8d1b8581b5b6efcfb80a9768d650dfa22f93777eca81ae9ef4de2301b22a7619649eb692a#npm:36.0.0"],\
@@ -12150,6 +12151,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["serve-favicon", "npm:2.5.0"],\
             ["sinon", "npm:18.0.0"],\
             ["sinon-chai", "virtual:3a02cceef93055271d0890b855d0c93a770c9c876ee9b808cf9e23d8d1b8581b5b6efcfb80a9768d650dfa22f93777eca81ae9ef4de2301b22a7619649eb692a#npm:3.7.0"],\
+            ["src", "link:./src::locator=hmcts-dev-test-frontend%40workspace%3A."],\
             ["style-loader", "virtual:3a02cceef93055271d0890b855d0c93a770c9c876ee9b808cf9e23d8d1b8581b5b6efcfb80a9768d650dfa22f93777eca81ae9ef4de2301b22a7619649eb692a#npm:4.0.0"],\
             ["stylelint", "npm:16.6.1"],\
             ["stylelint-config-standard", "virtual:3a02cceef93055271d0890b855d0c93a770c9c876ee9b808cf9e23d8d1b8581b5b6efcfb80a9768d650dfa22f93777eca81ae9ef4de2301b22a7619649eb692a#npm:36.0.0"],\
@@ -17909,6 +17911,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["sprintf-js", "npm:1.1.3"]\
           ],\
           "linkType": "HARD"\
+        }]\
+      ]],\
+      ["src", [\
+        ["link:./src::locator=hmcts-dev-test-frontend%40workspace%3A.", {\
+          "packageLocation": "./src/",\
+          "packageDependencies": [\
+            ["src", "link:./src::locator=hmcts-dev-test-frontend%40workspace%3A."]\
+          ],\
+          "linkType": "SOFT",\
+          "discardFromLookup": true\
         }]\
       ]],\
       ["sshpk", [\

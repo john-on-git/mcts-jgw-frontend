@@ -14,7 +14,7 @@
     "useUnknownInCatchVariables": false,
     "skipLibCheck": true,
     "lib": ["es2020", "dom", "dom.iterable"],
-    "baseUrl": "src/main",
+    "baseUrl": "./src/main",
     "paths": {
       "router/*": ["router/*"],
       "routes/*": ["routes/*"]
