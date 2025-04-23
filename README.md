@@ -9,3 +9,8 @@ To begin with, you should be able to run this by running:
 3) `yarn start:dev` or navigate to package.json and run the script manually
 
 You can change the structure however you like! 
+
+
+
+Hi me! If you're running this in VsCode, follow the Yarn docs to get it working with your IDE.
+https://yarnpkg.com/getting-started/editor-sdks

@@ -5714,7 +5714,7 @@ __metadata:
   dependencies:
     fclone: ^1.0.11
   peerDependencies:
-    chai: ">= 4.0.0 < 5"
+    chai: "*"
   checksum: 29d964d9f667bd2c8e0e5e597c299550ff13e41b737450d6f91aa4a28064e24f034c1296c85a1d0ba5ebc2a01188f4147dc60bda0f46382f8fb851052f770bb3
   languageName: node
   linkType: hard
@@ -5733,7 +5733,7 @@ __metadata:
     jsonpointer.js: 0.4.0
     tv4: ^1.3.0
   peerDependencies:
-    chai: ">= 1.6.1 < 5"
+    chai: "*"
   checksum: 9e161a8fb576532ddc2604e58936dc397db3d0d71772e20e86747391236fc053e7f71589c7cdcf13419b094f2ab32c71c561a4c2a17ff0c15647c31eb741cdbb
   languageName: node
   linkType: hard
@@ -5751,7 +5751,7 @@ __metadata:
   version: 1.5.0
   resolution: "chai-string@npm:1.5.0"
   peerDependencies:
-    chai: ^4.1.2
+    chai: ">= 4.1.2"
   checksum: d443bb416f6d4dd3395442f459af197aff93f2546dcb5bce6313badf505aa828615117f0eadc99e97ec518b7d2df387b538c81c647e6daf5c386d5bafa212e8f
   languageName: node
   linkType: hard

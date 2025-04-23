@@ -27,10 +27,11 @@ src/main/views/govuk
 coverage/
 smoke-output/
 functional-output/
-version
+1ersion
 
 .eslintcache
 
+.yarn
 .yarn/*
 !.yarn/cache/*
 !.yarn/patches
@@ -38,3 +39,6 @@ version
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+.vscode
+.vscode/*
