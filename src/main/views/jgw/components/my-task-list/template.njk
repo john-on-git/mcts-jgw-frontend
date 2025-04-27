@@ -9,7 +9,7 @@
         {% for task in params.tasks %}
                 {% if task %}
                     <div class="my-task-list-item">
-                        <a class="my-task-list-title" href="/details?id={{task.id}}">{{task.title}}</a>
+                        <a class="my-task-list-title" href="/details?id={{task.id}}">{{task.title | truncateLongString}}</a>
                         <!--<p class="my-task-list-description">{{task.description}}</p>-->
                         <p class="my-task-list-due-at">{{task.dueAt | formatDate}}</p>
                         <div>

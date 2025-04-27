@@ -6,70 +6,33 @@
 but ultimately it is up to you -->
 
 {% block content %}
-  <h1 class="govuk-heading-xl">Welcome to your dev test!</h1>
+  <a class="nav-link" href="/">Home</a>
+
 
   <!-- The freedom is yours. You can design the solution however you like, however there is a starting point provided
   to ensure you have both services running. You may want to make use of the Gov UK Components:
   https://design-system.service.gov.uk/components/ to add tabs and so forth :) -->
 
-  {% if example.length %}
+  {% if task %}
+    <div class="task-details-header">
+      {% if (task.title | truncateLongString) !== task.title %}
+        <h1 class="govuk-heading-xl task-details-title" title="{{task.title}}">{{task.title | truncateLongString}}</h1>
+      {% else %}
+        <h1 class="govuk-heading-xl task-details-title">{{task.title | truncateLongString}}</h1>
+      {% endif %}
+
+      <a class="entity-action-link" href="/edit?id="+{{task.id}}>Edit</a>
+      <a class="entity-action-link" href="/delete?id="+{{task.id}}>Delete</a>
+    </div>
 
     {{ govukSummaryList({
       rows: [
         {
           key: {
-            text: "ID"
-          },
-          value: {
-            text: example.id
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "change case id ?!"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Title"
-          },
-          value: {
-            html: example.title
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "change case title"
-              }
-            ]
-          }
-        },
-        {
-          key: {
             text: "Description"
           },
           value: {
-            html: example.description
-          },
-          actions: {
-            items: [
-               {
-                 href: "#",
-                 text: "Delete",
-                 visuallyHiddenText: "Delete description"
-               },
-               {
-                 href: "#",
-                 text: "Change",
-                 visuallyHiddenText: "Change description"
-               }
-            ]
+            html: task.description
           }
         },
         {
@@ -77,7 +40,7 @@ but ultimately it is up to you -->
             text: "Status"
           },
           value: {
-            html: example.status.title
+            html: task.status.title
           },
           actions: {
             items: [
@@ -89,7 +52,7 @@ but ultimately it is up to you -->
            text: "Due Date"
           },
           value: {
-           html: example.dueAt
+           html: task.dueAt
           },
           actions: {
            items: [

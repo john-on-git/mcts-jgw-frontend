@@ -25,6 +25,10 @@ export class Nunjucks {
         minute: '2-digit'
       });
     });
+    env.addFilter('truncateLongString', (str: string) => {
+      const maxLen = 40;
+      return str.length > maxLen ? `${str.substring(0,maxLen-3)}...` : str;
+    });
 
     app.use((req, res, next) => {
       res.locals.pagePath = req.path;
