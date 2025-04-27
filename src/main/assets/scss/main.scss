@@ -54,7 +54,7 @@ html {
 .task-form {
     width: 50%;
 }
-.task-form label, .task-form button {
+.task-form label {
     font-weight: bold;
 }
 .task-form label {
@@ -64,7 +64,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     gap: 1rem;
     margin-bottom: 1rem;
 }
@@ -80,6 +80,8 @@ html {
 }
 .task-form .button-input {
     margin-left: auto;
+    
+    text-align: center;
     
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
