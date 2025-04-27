@@ -22,6 +22,9 @@ html {
     margin-right: auto;
 }
 
+.nav-link {
+    margin-bottom: 1rem;
+}
 .entity-action-link {
     font-size: 2rem;
 }
@@ -40,4 +43,9 @@ html {
 }
 .nav-link:active, .entity-action-link:active {
     color: black;
+}
+
+.fake-link {
+    text-decoration: underline;
+    cursor: pointer;
 }

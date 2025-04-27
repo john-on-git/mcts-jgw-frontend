@@ -5,14 +5,9 @@
 <!-- You may want to make further use of these components: https://design-system.service.gov.uk/components/
 but ultimately it is up to you -->
 
-{% block head %}
-  {{ super() }}
-  <script src="static/details.js" defer></script>
-{% endblock %}
-
 {% block content %}
   <a class="nav-link" href="/">Home</a>
-
+  
   {% if task %}
     <div class="task-details-header">
       {% if (task.title | truncateLongString) !== task.title %}
@@ -21,8 +16,8 @@ but ultimately it is up to you -->
         <h1 class="govuk-heading-xl task-details-title">{{task.title | truncateLongString}}</h1>
       {% endif %}
 
-      <a class="entity-action-link" href="/update?id={{task.id}}">Edit</a>
-      <a class="entity-action-link fake-link" onClick="confirmDelete({{task.id}})">Delete</a>
+      <a class="entity-action-link" href="/edit?id="+{{task.id}}>Edit</a>
+      <a class="entity-action-link" href="/delete?id="+{{task.id}}>Delete</a>
     </div>
 
     {{ govukSummaryList({
