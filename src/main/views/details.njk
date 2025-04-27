@@ -7,23 +7,24 @@ but ultimately it is up to you -->
 
 {% block head %}
   {{ super() }}
-  <script src="static/details.js" defer></script>
+  <script src="client.js" defer></script>
 {% endblock %}
 
 {% block content %}
   <a class="nav-link" href="/">Home</a>
 
   {% if task %}
-    <div class="task-details-header">
+    <div class="title-flex">
       {% if (task.title | truncateLongString) !== task.title %}
         <h1 class="govuk-heading-xl task-details-title" title="{{task.title}}">{{task.title | truncateLongString}}</h1>
       {% else %}
         <h1 class="govuk-heading-xl task-details-title">{{task.title | truncateLongString}}</h1>
       {% endif %}
 
-      <a class="entity-action-link" href="/update?id={{task.id}}">Edit</a>
-      <a class="entity-action-link fake-link" onClick="confirmDelete({{task.id}})">Delete</a>
+      <a class="entity-action-link fake-link" onClick="ClientFunctions.confirmDelete({{task.id}})">Delete</a>
     </div>
+
+    {{ myInputPopup }}
 
     {{ govukSummaryList({
       rows: [
@@ -33,6 +34,19 @@ but ultimately it is up to you -->
           },
           value: {
             html: task.description
+          },
+          actions: {
+            items: [
+              {
+                href: '#',
+                text: "Change",
+                visuallyHiddenText: "change name",
+                attributes: {
+                  "data-task": (task | dump),
+                  "onClick": "ClientFunctions.placeholderPopup(this, 'description')"
+                }
+              }
+            ]
           }
         },
         {
@@ -44,6 +58,15 @@ but ultimately it is up to you -->
           },
           actions: {
             items: [
+              {
+                href: '#',
+                text: "Change",
+                visuallyHiddenText: "change status",
+                attributes: {
+                  "data-task": (task | dump),
+                  "onClick": "ClientFunctions.placeholderPopup(this, 'status')"
+                }
+              }
             ]
           }
         },
@@ -55,8 +78,17 @@ but ultimately it is up to you -->
            html: task.dueAt
           },
           actions: {
-           items: [
-           ]
+            items: [
+              {
+                href: '#',
+                text: "Change",
+                visuallyHiddenText: "change due date",
+                attributes: {
+                  "data-task": (task | dump),
+                  "onClick": "ClientFunctions.placeholderPopup(this, 'dueAt')"
+                }
+              }
+            ]
           }
         }
       ]

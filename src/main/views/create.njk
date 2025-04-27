@@ -7,56 +7,28 @@ but ultimately it is up to you -->
 
 {% block content %}
   <a class="nav-link" href="/">Home</a>
+  <div class="title-flex">
+    <h1 class="govuk-heading-xl task-details-title">Creating New Task</h1>
+  </div>
   
-  {% if task %}
-    <div class="task-details-header">
-      {% if (task.title | truncateLongString) !== task.title %}
-        <h1 class="govuk-heading-xl task-details-title" title="{{task.title}}">{{task.title | truncateLongString}}</h1>
-      {% else %}
-        <h1 class="govuk-heading-xl task-details-title">{{task.title | truncateLongString}}</h1>
-      {% endif %}
-
-      <a class="entity-action-link" href="/edit?id="+{{task.id}}>Edit</a>
-      <a class="entity-action-link" href="/delete?id="+{{task.id}}>Delete</a>
-    </div>
-
-    {{ govukSummaryList({
-      rows: [
-        {
-          key: {
-            text: "Description"
-          },
-          value: {
-            html: task.description
-          }
-        },
-        {
-          key: {
-            text: "Status"
-          },
-          value: {
-            html: task.status.title
-          },
-          actions: {
-            items: [
-            ]
-          }
-        },
-        {
-          key: {
-           text: "Due Date"
-          },
-          value: {
-           html: task.dueAt
-          },
-          actions: {
-           items: [
-           ]
-          }
-        }
-      ]
-    }) }}
-
-  {% endif %}
+    <form>
+      <label>
+        Title
+        <input type="text"></input>
+      </label>
+      <label>
+        Description
+        <input type="text"></input>
+      </label>
+      <label>
+        LABEL
+        <input type="text"></input>
+      </label>
+      <label>
+        LABEL
+        <input type="text"></input>
+      </label>
+      <input type="submit"></input>
+    </form>
 
 {% endblock %}

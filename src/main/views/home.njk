@@ -7,8 +7,11 @@
 but ultimately it is up to you -->
 
 {% block content %}
-  <h1 class="govuk-heading-xl">Your Tasks</h1>
-
+  <div class="title-flex">
+    <h1 class="govuk-heading-xl task-details-title">Your Tasks</h1>
+    <a class="entity-action-link" href="/create">Create</a>
+  </div>
+  
   {% if tasks %}
     {{ myTaskList({tasks: tasks}) }}
   {% endif %}

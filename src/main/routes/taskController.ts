@@ -61,26 +61,6 @@ export default function (app: Application): void {
       res.render('error');
     }
   });
-  
-  app.get('/edit', async(req,res) => {
-    try {
-      //get the task from the backend API / task service
-      const response = await axios.get('http://localhost:4000/task/details', {
-        params: {
-          id: req.query['id']
-        }
-      });
-      if(response.data !== null) {
-        res.render('edit', { 'task': response.data });
-      }
-      else {
-        res.render('not-found'); //display not found if the task doesn't exist
-      }
-    } catch (error) {
-      console.error('Error making request:', error);
-      res.render('error');
-    }
-  });
   app.get('/delete', async (req, res) => {
     try {
       //get the tasks from the backend API / task service

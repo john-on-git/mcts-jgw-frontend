@@ -32,3 +32,27 @@ module.exports = {
     filename,
   },
 };
+
+module.exports = {
+  entry: path.resolve(sourcePath, 'client.ts'),
+  mode: devMode ? 'development' : 'production',
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
+  module: {
+    rules: [
+      ...scss.rules,
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
+  },
+  output: {
+    path: path.resolve(__dirname, 'src/main/public/'),
+    filename: 'client.js',
+    libraryTarget: 'var',
+    library: 'ClientFunctions'
+  },
+};
