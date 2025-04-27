@@ -10,7 +10,7 @@ but ultimately it is up to you -->
   <h1 class="govuk-heading-xl">Your Tasks</h1>
 
   {% if tasks %}
-    {{ myTaskList({items: [tasks]}) }}
+    {{ myTaskList({tasks: tasks}) }}
   {% endif %}
 
 {% endblock %}

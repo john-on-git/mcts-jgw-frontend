@@ -1,10 +1,56 @@
 .my-task-list {
-    background-color: blue;
+    font-family: "GDS Transport", arial, sans-serif;
+    text-align: center;
 }
 
-.my-task-list-item {
+.my-task-list > * {
+    border-bottom: 1px solid rgb(0, 0, 0, calc(2/3));
+}
+.my-task-list > *:first-child {
+    border-bottom: 2px solid black !important;
+}
+.my-task-list > *:last-child {
+    border-bottom: none !important;
+}
+
+.my-task-list-header, .my-task-list a {
+    font-weight: bold;
+    text-decoration-skip-ink: none;
+}
+
+.my-task-list-header, .my-task-list-item {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.my-task-list-header > *, .my-task-list-item > * {
+    flex-grow: 1;
+    flex-basis: 0;
 }
 
 .my-task-list-item-row {
+}
+
+/*
+    Box around completed tasks like in the official task list.
+*/
+.my-task-list-status {
+    /*content shouldn't fill the full flex, the box should just surround the content*/
+    width: fit-content;
+
+    /*little bit of padding for the box*/
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    
+    /*margins so that it still uses the full flex size*/
+    margin: auto;
+}
+.task-status-1 {
+    
+}
+.task-status-2 {
+    background-color: rgb(128, 128, 128, calc(1/3));
 }

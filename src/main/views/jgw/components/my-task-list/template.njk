@@ -1,16 +1,22 @@
 {%- set taskList -%}
     <div class="my-task-list">
-        {% for item in params.items %}
-            <div class="my-task-list-item">
-                {% if item %}
-                    {% for k,v in item %}
-                        <div class="my-task-list-item-row">
-                            <p>{{k}}</p>
-                            <p>{{v}}</p>
+        <div class="my-task-list-header">
+            <p>Title</p>
+            <!--<p>Description</p>-->
+            <p>Due At</p>
+            <p>Status</p>
+        </div>
+        {% for task in params.tasks %}
+                {% if task %}
+                    <div class="my-task-list-item">
+                        <a class="my-task-list-title" href="/details?id={{task.id}}">{{task.title}}</a>
+                        <!--<p class="my-task-list-description">{{task.description}}</p>-->
+                        <p class="my-task-list-due-at">{{task.dueAt | formatDate}}</p>
+                        <div>
+                            <p class="my-task-list-status task-status-{{task.status.id}}">{{task.status.title}}</p>
                         </div>
-                    {% endfor %}
+                    </div>
                 {% endif %}
-            </div>
         {% endfor %}
     </div>
 {%- endset %}
