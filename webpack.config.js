@@ -11,7 +11,10 @@ const filename = `[name]${fileNameSuffix}.js`;
 
 module.exports = {
   plugins: [...govukFrontend.plugins, ...scss.plugins, ...HtmlWebpack.plugins],
-  entry: path.resolve(sourcePath, 'index.ts'),
+  entry: {
+    'main-dev.js': path.resolve(sourcePath, 'index.ts'),
+    'clientFunctions.js': path.resolve(sourcePath, 'client.ts')
+  },
   mode: devMode ? 'development' : 'production',
   module: {
     rules: [
@@ -30,28 +33,6 @@ module.exports = {
     path: path.resolve(__dirname, 'src/main/public/'),
     publicPath: '',
     filename,
-  },
-};
-
-module.exports = {
-  entry: path.resolve(sourcePath, 'client.ts'),
-  mode: devMode ? 'development' : 'production',
-  resolve: {
-    extensions: ['.ts', '.js'],
-  },
-  module: {
-    rules: [
-      ...scss.rules,
-      {
-        test: /\.ts$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ],
-  },
-  output: {
-    path: path.resolve(__dirname, 'src/main/public/'),
-    filename: 'client.js',
     libraryTarget: 'var',
     library: 'ClientFunctions'
   },
