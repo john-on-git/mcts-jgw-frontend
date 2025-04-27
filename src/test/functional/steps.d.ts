@@ -7,6 +7,6 @@ declare namespace CodeceptJS {
   interface Methods extends Puppeteer {}
   interface I extends WithTranslation<Methods> {}
   namespace Translation {
-    interface Actions {}
+    interface Actions { }
   }
 }
