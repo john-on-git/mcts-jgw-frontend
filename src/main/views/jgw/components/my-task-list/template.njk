@@ -1,0 +1,18 @@
+{%- set taskList -%}
+    <div class="my-task-list">
+        {% for item in params.items %}
+            <div class="my-task-list-item">
+                {% if item %}
+                    {% for k,v in item %}
+                        <div class="my-task-list-item-row">
+                            <p>{{k}}</p>
+                            <p>{{v}}</p>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{%- endset %}
+
+{{ taskList | safe }}

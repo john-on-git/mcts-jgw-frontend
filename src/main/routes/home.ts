@@ -7,7 +7,7 @@ export default function (app: Application): void {
       // An example of connecting to the backend (a starting point)
       const response = await axios.get('http://localhost:4000/task/details?id=1');
       console.log(response.data);
-      res.render('home', { 'example': response.data });
+      res.render('home', { 'tasks': response.data });
     } catch (error) {
       console.error('Error making request:', error);
       res.render('error');

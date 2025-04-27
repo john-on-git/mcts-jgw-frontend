@@ -1,6 +1,6 @@
 {
   "watch": ["src/main"],
-  "ext": "ts,js",
+  "ext": "ts,js,scss",
   "ignore": ["src/**/*.spec.ts"],
-  "exec": "./bin/generate-ssl-options.sh && ts-node ./src/main/server.ts"
+  "exec": "./bin/generate-ssl-options.sh && yarn webpack && ts-node ./src/main/server.ts"
 }
