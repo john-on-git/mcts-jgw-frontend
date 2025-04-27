@@ -5,30 +5,33 @@
 <!-- You may want to make further use of these components: https://design-system.service.gov.uk/components/
 but ultimately it is up to you -->
 
+{% block head %}
+  {{ super() }}
+  <script src="client.js" defer></script> {# this is generated from client.ts #}
+{% endblock %}
+
 {% block content %}
   <a class="nav-link" href="/">Home</a>
   <div class="title-flex">
     <h1 class="govuk-heading-xl task-details-title">Creating New Task</h1>
   </div>
   
-    <form>
-      <label>
-        Title
-        <input type="text"></input>
-      </label>
-      <label>
-        Description
-        <input type="text"></input>
-      </label>
-      <label>
-        LABEL
-        <input type="text"></input>
-      </label>
-      <label>
-        LABEL
-        <input type="text"></input>
-      </label>
-      <input type="submit"></input>
+    <form class="task-form" name="create-task">
+      <div>
+        <label for="input-title">Title</label>
+        <input id="input-title" class="text-input" type="text" name="title" required></input>
+      </div>
+      
+      <div>
+        <label for="input-description">Description</label>
+        <input id="input-description" class="text-input" type="text" name="description"></input>
+      </div>
+      
+      <div>
+        <label for="input-due-at">Due Date</label>
+        <input id="input-due-at" class="datetime-input" type="datetime-local" name="dueAt" required></input>
+      </div>
+      <input class="button-input" value="Create Task" onClick="ClientFunctions.onCreateSubmit(this.parentElement)"></input>
     </form>
 
 {% endblock %}

@@ -11,7 +11,33 @@ interface Task {
     };
 };
 
+const backendURL = 'http://localhost:4000';
+
 module.exports = {
+    onCreateSubmit: async function (form: HTMLFormElement): Promise<void> {
+        if(form.reportValidity()) {
+            //convert the form data into a Task
+            const task: {[k: string]: unknown} = {
+                title: null,
+                description: null,
+                dueAt: null,
+            };
+            for(const [k,v] of new FormData(form).entries()) {
+                task[k] = v;
+            }
+            try {
+                //submit the form
+                await axios.post(`${backendURL}/task/create`, task);
+                
+                //redirect back to home/task list
+                window.location.href = '/';
+            }
+            catch(e) {
+                console.error(e);
+                alert('an error occurred');
+            }
+        }
+    },
     confirmDelete: function (taskId: number): void {
         //prompt the user for confirmation before deleting the task
         if(confirm('Really delete this task?')) {
@@ -22,7 +48,7 @@ module.exports = {
         async function sendToDB(task: Task) {
             try {
                 await axios.put(
-                    'http://localhost:4000/task/update',
+                    `${backendURL}/task/update`,
                     task, 
                     {
                         timeout: 10000

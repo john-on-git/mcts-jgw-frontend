@@ -6,14 +6,12 @@ const scss = require(path.resolve(__dirname, 'webpack/scss'));
 const HtmlWebpack = require(path.resolve(__dirname, 'webpack/htmlWebpack'));
 
 const devMode = process.env.NODE_ENV !== 'production';
-const fileNameSuffix = devMode ? '-dev' : '.[contenthash]';
-const filename = `[name]${fileNameSuffix}.js`;
 
 module.exports = {
   plugins: [...govukFrontend.plugins, ...scss.plugins, ...HtmlWebpack.plugins],
   entry: {
-    'main-dev.js': path.resolve(sourcePath, 'index.ts'),
-    'clientFunctions.js': path.resolve(sourcePath, 'client.ts')
+    'main': path.resolve(sourcePath, 'index.ts'),
+    'client': path.resolve(sourcePath, 'client.ts')
   },
   mode: devMode ? 'development' : 'production',
   module: {
@@ -32,7 +30,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'src/main/public/'),
     publicPath: '',
-    filename,
     libraryTarget: 'var',
     library: 'ClientFunctions'
   },
