@@ -21,9 +21,7 @@
     }
   },
   "typeAcquisition": {
-    "include": [
-      "jest"
-    ]
+    "include": ["jest"]
   },
   "exclude": ["**/*.test.ts", "**/codecept.conf.ts", "**/__mocks__/*"]
 }

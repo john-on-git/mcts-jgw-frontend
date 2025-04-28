@@ -3,10 +3,7 @@
     "files": true
   },
   "typeAcquisition": {
-    "include": [
-      "jest",
-      "chai"
-    ]
+    "include": ["jest", "chai"]
   },
   "compilerOptions": {
     "target": "es2018",

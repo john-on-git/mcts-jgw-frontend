@@ -1,50 +1,53 @@
 .my-task-list {
-    text-align: center;
+  text-align: center;
 }
 
 .my-task-list > * {
-    border-bottom: 1px solid #b1b4b6;;
+  border-bottom: 1px solid #b1b4b6;
 }
 .my-task-list > *:first-child {
-    border-bottom-width: 2px !important;
+  border-bottom-width: 2px !important;
 }
 .my-task-list > *:last-child {
-    border-bottom: none !important;
+  border-bottom: none !important;
 }
 
-.my-task-list-header, .my-task-list a {
-    font-weight: bold;
-    text-decoration-skip-ink: none;
+.my-task-list-header,
+.my-task-list a {
+  font-weight: bold;
+  text-decoration-skip-ink: none;
 }
 
-.my-task-list-header, .my-task-list-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+.my-task-list-header,
+.my-task-list-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
-.my-task-list-header > *, .my-task-list-item > * {
-    flex-grow: 1;
-    flex-basis: 0;
+.my-task-list-header > *,
+.my-task-list-item > * {
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
 /*
     Box around completed tasks like in the official task list.
 */
 .my-task-list-status {
-    /*content shouldn't fill the full flex, the box should just surround the content*/
-    width: fit-content;
+  /*content shouldn't fill the full flex, the box should just surround the content*/
+  width: fit-content;
 
-    /*little bit of padding for the box*/
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    
-    /*margins so that it still uses the full flex size*/
-    margin: auto;
+  /*little bit of padding for the box*/
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  /*margins so that it still uses the full flex size*/
+  margin: auto;
 }
 
 .task-status-2 {
-    background-color: $glass-grey;
+  background-color: $glass-grey;
 }
