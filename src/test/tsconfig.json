@@ -2,6 +2,12 @@
   "ts-node": {
     "files": true
   },
+  "typeAcquisition": {
+    "include": [
+      "jest",
+      "chai"
+    ]
+  },
   "compilerOptions": {
     "target": "es2018",
     "lib": ["es2018", "DOM"],

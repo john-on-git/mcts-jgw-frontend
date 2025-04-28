@@ -20,5 +20,10 @@
       "routes/*": ["routes/*"]
     }
   },
+  "typeAcquisition": {
+    "include": [
+      "jest"
+    ]
+  },
   "exclude": ["**/*.test.ts", "**/codecept.conf.ts", "**/__mocks__/*"]
 }
