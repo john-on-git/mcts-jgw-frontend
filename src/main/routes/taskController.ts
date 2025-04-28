@@ -8,7 +8,7 @@ export default function (app: Application): void {
       res.render('create');
     } catch (error) {
       console.error('Error making request:', error);
-      res.render('error');
+      res.status(HttpStatusCode.NotFound).render('error');
     }
   });
   app.get('/', async (_, res) => {
@@ -18,7 +18,7 @@ export default function (app: Application): void {
       res.render('home', { 'tasks': response.data });
     } catch (error) {
       console.error('Error making request:', error);
-      res.render('error');
+      res.status(HttpStatusCode.NotFound).render('error');
     }
   });
   
@@ -34,11 +34,11 @@ export default function (app: Application): void {
         res.render('details', { 'task': response.data });
       }
       else {
-        res.render('not-found'); //display not found if the task doesn't exist
+        res.status(HttpStatusCode.NotFound).render('not-found'); //display not found if the task doesn't exist
       }
     } catch (error) {
       console.error('Error making request:', error);
-      res.render('error');
+      res.status(HttpStatusCode.NotFound).render('error');
     }
   });
   
@@ -54,11 +54,11 @@ export default function (app: Application): void {
         res.render('details', { 'task': response.data });
       }
       else {
-        res.render('not-found'); //display not found if the task doesn't exist
+        res.status(HttpStatusCode.NotFound).render('not-found'); //display not found if the task doesn't exist
       }
     } catch (error) {
       console.error('Error making request:', error);
-      res.render('error');
+      res.status(HttpStatusCode.NotFound).render('error');
     }
   });
   app.get('/delete', async (req, res) => {
@@ -77,7 +77,7 @@ export default function (app: Application): void {
       }
     } catch (error) {
       console.error('Error making request:', error);
-      res.render('error');
+      res.status(HttpStatusCode.InternalServerError).render('error');
     }
   });
 }

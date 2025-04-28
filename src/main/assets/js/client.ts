@@ -44,6 +44,9 @@ module.exports = {
             window.location.href = `/delete?id=${taskId}`;
         }
     },
+    placeholderDatePopup: function (): void {
+        alert("I originally had this as an input popup as well, but after writing the tests realised it has to be a date picker to be usable and that'll require a custom modal. Don't really have the time :(");
+    },
     placeholderPopup: function (element: HTMLElement, field: string): void {
         async function sendToDB(task: Task) {
             try {

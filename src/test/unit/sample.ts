@@ -1,4 +1,4 @@
-import { describe, expect, test } from 'chai';
+import { describe, test } from '@jest/globals';
 
 /* eslint-disable jest/expect-expect */
 describe('Example test to satisfy jest (to be removed from your app)', () => {

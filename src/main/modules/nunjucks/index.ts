@@ -1,5 +1,7 @@
 import * as path from 'path';
 
+import { formatDate, truncateLongString } from '../../assets/js/utils';
+
 import * as express from 'express';
 import * as nunjucks from 'nunjucks';
 
@@ -15,20 +17,8 @@ export class Nunjucks {
       watch: this.developmentMode,
       express: app,
     });
-    env.addFilter('formatDate', (date: string) => {
-      return new Date(date).toLocaleDateString(undefined, {
-        day: 'numeric',
-        month: 'numeric',
-        year: 'numeric',
-        
-        hour: '2-digit',
-        minute: '2-digit'
-      });
-    });
-    env.addFilter('truncateLongString', (str: string) => {
-      const maxLen = 40;
-      return str.length > maxLen ? `${str.substring(0,maxLen-3)}...` : str;
-    });
+    env.addFilter('formatDate', formatDate);
+    env.addFilter('truncateLongString', truncateLongString);
 
     app.use((req, res, next) => {
       res.locals.pagePath = req.path;

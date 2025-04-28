@@ -2,7 +2,6 @@
     <div class="my-task-list">
         <div class="my-task-list-header">
             <p>Title</p>
-            <!--<p>Description</p>-->
             <p>Due At</p>
             <p>Status</p>
         </div>
@@ -17,6 +16,8 @@
                         </div>
                     </div>
                 {% endif %}
+        {% else %}
+            <p>You have no tasks</p>
         {% endfor %}
     </div>
 {%- endset %}

@@ -75,7 +75,7 @@ but ultimately it is up to you -->
            text: "Due Date"
           },
           value: {
-           html: task.dueAt
+           html: (task.dueAt | formatDate)
           },
           actions: {
             items: [
@@ -85,7 +85,7 @@ but ultimately it is up to you -->
                 visuallyHiddenText: "change due date",
                 attributes: {
                   "data-task": (task | dump),
-                  "onClick": "ClientFunctions.placeholderPopup(this, 'dueAt')"
+                  "onClick": "ClientFunctions.placeholderDatePopup()"
                 }
               }
             ]
